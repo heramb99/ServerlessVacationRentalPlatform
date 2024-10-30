@@ -1,0 +1,1934 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Serverless Group-32 IaC",
+  "Resources": {
+    "AuthRegistrationCodeVerifyLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "code_verify",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "code_verify.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthRegistrationResendCodeLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "resend_code",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "resend_code.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthLoginCredentialsLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "login_credentials",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "login_credentials.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthGetMFAStatusLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "get_mfa_status",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "get_mfa_status.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthRegisterCredentialsLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "register_credentials",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "register_credentials.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthSessionLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "session",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "session.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthSetCaesarCipherLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "setup_caesar_cipher",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "setup_caesar_cipher.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthSetSecurityQuestionLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "setup_security_question",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "setup_security_question.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthVerifyCipherLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "verify_cipher",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "verify_cipher.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthLogoutLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "logout",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "logout.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthVerifySecurityAnswerLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "verify_security_answer",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "verify_security_answer.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthAuthorizerLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "authorizer",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "authorizer.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AuthConstantsLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "constants",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "auth-serverless",
+          "S3Key": "constants.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "UserBookRoomLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "book_room",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "serverless-user",
+          "S3Key": "book_room.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "UserBookRoomApprovalLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "book_room_approval",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "serverless-user",
+          "S3Key": "book_room_approval.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "UserBookRoomRequestLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "book_room_request",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "serverless-user",
+          "S3Key": "book_room_request.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "UserGetBookingsLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "get_bookings",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "serverless-user",
+          "S3Key": "get_bookings.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "UserAddFeedbackLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "add_feedback",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "serverless-user",
+          "S3Key": "add_feedback.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "UserGetRoomDetailsLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "get_room_details",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "serverless-user",
+          "S3Key": "get_room_details.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "UserGetRoomsLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "user_get_rooms",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "serverless-user",
+          "S3Key": "get_rooms.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "UserValidatorLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "user_validator",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "serverless-user",
+          "S3Key": "validator.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AgentCreateRoomLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "create_room",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "agent-serverless",
+          "S3Key": "create_room.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AgentDeleteRoomLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "delete_room",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "agent-serverless",
+          "S3Key": "delete_room.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AgentEditRoomLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "edit_room",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "agent-serverless",
+          "S3Key": "edit_room.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AgentGetRoomsLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "get_rooms",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "agent-serverless",
+          "S3Key": "get_rooms.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+    "AgentValidatorLambda": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "FunctionName": "agent_validator",
+        "Runtime": "python3.11",
+        "Role": "arn:aws:iam::3xxxxxxxxxxx:role/LabRole",
+        "Handler": "lambda/signup.handler",
+        "Code": {
+          "S3Bucket": "agent-serverless",
+          "S3Key": "validator.py.zip"
+        },
+        "Timeout": 120
+      }
+    },
+
+
+    "ApiStack": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Name": "APIsSDP-32"
+      }
+    },
+
+    "AuthApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Fn::GetAtt": [
+            "ApiStack",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "auth"
+      }
+    },
+    "SessionApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "AuthApiResource"
+        },
+        "PathPart": "session"
+      }
+    },
+    "RegisterApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "AuthApiResource"
+        },
+        "PathPart": "register"
+      }
+    },
+    "RegisterMFAApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "RegisterApiResource"
+        },
+        "PathPart": "mfa"
+      }
+    },
+    "MFASecurityQuestionApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "RegisterMFAApiResource"
+        },
+        "PathPart": "security-question"
+      }
+    },
+    "MFACaesarCipherApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "RegisterMFAApiResource"
+        },
+        "PathPart": "caesar-cipher"
+      }
+    },
+    "MFAStatusApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "RegisterMFAApiResource"
+        },
+        "PathPart": "status"
+      }
+    },
+    "RegisterVerifyApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "RegisterApiResource"
+        },
+        "PathPart": "verify"
+      }
+    },
+    "ResendCodeApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "RegisterApiResource"
+        },
+        "PathPart": "resend-code"
+      }
+    },
+    "LogOutApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "AuthApiResource"
+        },
+        "PathPart": "logout"
+      }
+    },
+    "LoginApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "AuthApiResource"
+        },
+        "PathPart": "login"
+      }
+    },
+    "LoginMFAApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "LoginApiResource"
+        },
+        "PathPart": "mfa"
+      }
+    },
+    "LoginMFACaesarCipherApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "LoginMFAApiResource"
+        },
+        "PathPart": "caesar-cipher"
+      }
+    },
+    "LoginMFASecurityQuestionApiResource": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ParentId": {
+          "Ref": "LoginMFAApiResource"
+        },
+        "PathPart": "security-question"
+      }
+    },
+
+
+    "SessionApiGETMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "GET",
+        "ResourceId": {
+          "Ref": "SessionApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "GET",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'GET,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthSessionLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "SessionApiOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "SessionApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'GET,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthSessionLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "RegisterApiPOSTMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "ResourceId": {
+          "Ref": "RegisterApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "POST",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthRegisterCredentialsLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "RegisterApiOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "RegisterApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthRegisterCredentialsLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "MFASecurityQuestionPOSTMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "ResourceId": {
+          "Ref": "MFASecurityQuestionApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "POST",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthSetSecurityQuestionLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "MFASecurityQuestionOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "MFASecurityQuestionApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthSetSecurityQuestionLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "MFACaesarCipherPOSTMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "ResourceId": {
+          "Ref": "MFACaesarCipherApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "POST",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthSetCaesarCipherLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "MFACaesarCipherOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "MFACaesarCipherApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthSetCaesarCipherLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "MFAStatusGETMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "GET",
+        "ResourceId": {
+          "Ref": "MFAStatusApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "GET",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,GET'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthGetMFAStatusLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "MFAStatusOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "MFAStatusApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthGetMFAStatusLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "RegisterVerifyApiPOSTMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "ResourceId": {
+          "Ref": "RegisterVerifyApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "POST",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthRegistrationCodeVerifyLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "RegisterVerifyApiOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "RegisterVerifyApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthRegistrationCodeVerifyLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "ResendCodeApiPOSTMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "ResourceId": {
+          "Ref": "ResendCodeApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "POST",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthRegistrationResendCodeLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "ResendCodeApiOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "ResendCodeApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthRegistrationResendCodeLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "LogOutApiDELETEMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "DELETE",
+        "ResourceId": {
+          "Ref": "LogOutApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "DELETE",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'DELETE,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthLogoutLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "LogoutApiOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "LogOutApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'DELETE,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthLogoutLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "LoginApiPOSTMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "ResourceId": {
+          "Ref": "LoginApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "POST",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthLoginCredentialsLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "LoginApiOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "LoginApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthLoginCredentialsLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+
+    "LoginMFACaesarCipherApiPOSTMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "ResourceId": {
+          "Ref": "LoginMFACaesarCipherApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "POST",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthVerifyCipherLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "LoginMFACaesarCipherApiOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "LoginMFACaesarCipherApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthVerifyCipherLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+
+    "LoginMFASecurityQuestionApiPOSTMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "ResourceId": {
+          "Ref": "LoginMFASecurityQuestionApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "POST",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthVerifySecurityAnswerLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+    "LoginMFASecurityQuestionApiOPTIONSMethod": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "OPTIONS",
+        "ResourceId": {
+          "Ref": "LoginMFASecurityQuestionApiResource"
+        },
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "ApiKeyRequired": false,
+        "Integration": {
+          "PassthroughBehavior": "WHEN_NO_TEMPLATES",
+          "IntegrationHttpMethod": "OPTIONS",
+          "IntegrationResponses": [
+            {
+              "StatusCode": "200",
+              "ResponseTemplates": {
+                "application/json": ""
+              },
+              "ResponseParameters": {
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Methods": "'POST,OPTIONS'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          ],
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${AuthVerifySecurityAnswerLambda.Arn}/invocations"
+          }
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+            "ResponseModels": {
+              "application/json": "Empty"
+            },
+            "ResponseParameters": {
+              "method.response.header.Access-Control-Allow-Headers": false,
+              "method.response.header.Access-Control-Allow-Methods": false,
+              "method.response.header.Access-Control-Allow-Origin": false
+            }
+          }
+        ]
+      }
+    },
+
+
+
+    "AuthApiDeployment": {
+      "Type": "AWS::ApiGateway::Deployment",
+      "DependsOn": [
+        "SessionApiGETMethod",
+        "SessionApiOPTIONSMethod",
+        "RegisterApiPOSTMethod",
+        "RegisterApiOPTIONSMethod",
+        "MFASecurityQuestionPOSTMethod",
+        "MFASecurityQuestionOPTIONSMethod",
+        "MFACaesarCipherPOSTMethod",
+        "MFACaesarCipherOPTIONSMethod",
+        "MFAStatusGETMethod",
+        "RegisterVerifyApiPOSTMethod",
+        "RegisterVerifyApiOPTIONSMethod",
+        "ResendCodeApiPOSTMethod",
+        "ResendCodeApiOPTIONSMethod",
+        "LogOutApiDELETEMethod",
+        "LogoutApiOPTIONSMethod",
+        "LoginApiPOSTMethod",
+        "LoginApiOPTIONSMethod",
+        "LoginMFACaesarCipherApiPOSTMethod",
+        "LoginMFACaesarCipherApiOPTIONSMethod",
+        "LoginMFASecurityQuestionApiPOSTMethod",
+        "LoginMFASecurityQuestionApiOPTIONSMethod"
+      ],
+      "Properties": {
+        "RestApiId": {
+          "Ref": "ApiStack"
+        },
+        "StageName": "prod"
+      }
+    },
+
+
+
+    "AuthSessionLambdaGETPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthSessionLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/GET/auth/session"
+        }
+      }
+    },
+    "AuthSessionLambdaOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthSessionLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/session"
+        }
+      }
+    },
+    "RegisterLambdaPOSTPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthRegisterCredentialsLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/POST/auth/register"
+        }
+      }
+    },
+    "RegisterLambdaOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthRegisterCredentialsLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/register"
+        }
+      }
+    },
+    "MFASecurityQuestionLambdaPOSTPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthSetSecurityQuestionLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/POST/auth/register/mfa/security-question"
+        }
+      }
+    },
+    "MFASecurityQuestionOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthSetSecurityQuestionLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/register/mfa/security-question"
+        }
+      }
+    },
+    "MFACaesarCipherLambdaPOSTPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthSetCaesarCipherLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/POST/auth/register/mfa/caesar-cipher"
+        }
+      }
+    },
+    "MFACaesarCipherOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthSetCaesarCipherLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/register/mfa/caesar-cipher"
+        }
+      }
+    },
+    "MFAStatusLambdaGETPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthGetMFAStatusLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/GET/auth/register/mfa/status"
+        }
+      }
+    },
+    "MFAStatusLambdaOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthGetMFAStatusLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/register/mfa/status"
+        }
+      }
+    },
+    "RegisterVerifyLambdaPOSTPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthRegistrationCodeVerifyLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/POST/auth/register/verify"
+        }
+      }
+    },
+    "RegisterVerifyLambdaOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthRegistrationCodeVerifyLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/register/verify"
+        }
+      }
+    },
+    "AuthRegistrationResendCodeLambdaPOSTPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthRegistrationResendCodeLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/POST/auth/register/resend-code"
+        }
+      }
+    },
+    "AuthRegistrationResendCodeLambdaOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthRegistrationResendCodeLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/register/verify"
+        }
+      }
+    },
+    "AuthLogoutLambdaDELETEPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthRegistrationResendCodeLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/DELETE/auth/logout"
+        }
+      }
+    },
+    "AuthLogoutLambdaOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthLogoutLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/logout"
+        }
+      }
+    },
+    "AuthLoginCredentialsLambdaPOSTPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthLoginCredentialsLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/POST/auth/login"
+        }
+      }
+    },
+    "AuthLoginCredentialsLambdaOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthLoginCredentialsLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/login"
+        }
+      }
+    },
+    "AuthVerifyCipherLambdaPOSTPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthVerifyCipherLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/POST/auth/login/mfa/caesar-cipher"
+        }
+      }
+    },
+    "AuthVerifyCipherLambdaOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthVerifyCipherLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/login/mfa/caesar-cipher"
+        }
+      }
+    },
+    "AuthVerifySecurityAnswerLambdaPOSTPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthVerifySecurityAnswerLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/POST/auth/login/mfa/security-question"
+        }
+      }
+    },
+    "AuthVerifySecurityAnswerLambdaOPTIONSPermission": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "AuthVerifySecurityAnswerLambda"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Sub": "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiStack}/*/OPTIONS/auth/login/mfa/security-question"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  DvhUserTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties: 
+      TableName: 'dvh-user'
+      AttributeDefinitions:
+        - AttributeName: 'email'
+          AttributeType: 'S'
+      KeySchema:
+        - AttributeName: 'email'
+          KeyType: 'HASH'
+      ProvisionedThroughput: 
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+  DvhSessionTable:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      TableName: 'dvh-session'
+      AttributeDefinitions:
+        - AttributeName: 'email'
+          AttributeType: 'S'  
+      KeySchema:
+        - AttributeName: 'email'
+          KeyType: 'HASH'
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+      TimeToLiveSpecification:
+        AttributeName: 'TTL'
+        Enabled: true
